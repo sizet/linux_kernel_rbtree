@@ -1,0 +1,1009 @@
+<!-- © -->
+
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="css_body">
+
+<div class="css_div_form_title_large">速查表</div>
+<div class="css_div_form_body_large">
+  <br>
+
+  <table class="css_table_solid">
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_RB_ROOT">RB_ROOT</a></td>
+      <td class="css_td_solid_normal">
+        巨集, 初始化紅黑樹樹根.<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_RB_EMPTY_ROOT">RB_EMPTY_ROOT</a></td>
+      <td class="css_td_solid_normal">
+        巨集, 檢查紅黑樹樹根是否為空.<br>
+        <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_RB_CLEAR_NODE">RB_CLEAR_NODE</a></td>
+      <td class="css_td_solid_normal">
+        巨集, 清除紅黑樹節點中指向父節點的變數的值 (改為指向自己).<br>
+        <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_RB_EMPTY_NODE">RB_EMPTY_NODE</a></td>
+      <td class="css_td_solid_normal">
+        巨集, 檢查紅黑樹節點中指向父節點的變數是否為空 (是否是指向自己).<br>
+        <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_entry">rb_entry</a></td>
+      <td class="css_td_solid_normal">
+        巨集, 透過結構成員的位址獲得結構主體的位址.<br>
+        <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_parent">rb_parent</a></td>
+      <td class="css_td_solid_normal">
+        巨集, 取得某個紅黑樹節點的父節點的位址.<br>
+        <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_link_node">rb_link_node</a></td>
+      <td class="css_td_solid_normal">
+        連結要加入紅黑樹的紅黑樹節點.<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_insert_color">rb_insert_color</a></td>
+      <td class="css_td_solid_normal">
+        連結要加入紅黑樹的紅黑樹節點著色以及調整紅黑樹的平衡.<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_erase">rb_erase</a></td>
+      <td class="css_td_solid_normal">
+        刪除紅黑樹的紅黑樹節點並調整紅黑樹的平衡.<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_first">rb_first</a></td>
+      <td class="css_td_solid_normal">
+        指向紅黑樹最左邊的紅黑樹節點.<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_last">rb_last</a></td>
+      <td class="css_td_solid_normal">
+        指向紅黑樹最右邊的紅黑樹節點.<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_next">rb_next</a></td>
+      <td class="css_td_solid_normal">
+        指向某個紅黑樹節點的後一個紅黑樹節點 (以中序方式走訪).<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_prev">rb_prev</a></td>
+      <td class="css_td_solid_normal">
+        指向某個紅黑樹節點的前一個紅黑樹節點 (以中序方式走訪).<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_first_postorder">rb_first_postorder</a></td>
+      <td class="css_td_solid_normal">
+        指向紅黑樹最左邊的紅黑樹節點.<br>
+        <font class="css_font_r1">從 kernel 3.12 開始之後才有.</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_next_postorder">rb_next_postorder</a></td>
+      <td class="css_td_solid_normal">
+        指向某個紅黑樹節點的後一個紅黑樹節點 (以後序方式走訪).<br>
+        <font class="css_font_r1">從 kernel 3.12 開始之後才有.</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rbtree_postorder_for_each_entry_safe">rbtree_postorder_for_each_entry_safe</a></td>
+      <td class="css_td_solid_normal">
+        巨集, 以後序方式走訪紅黑樹上的所有紅黑樹節點 (左到右), 可以在走訪期間刪除節點.<br>
+        <font class="css_font_r1">從 kernel 3.12 開始之後才有</font><br>
+      </td>
+    </tr>
+    <tr>
+      <td class="css_td_solid_nowrap"><a href="#hook_rb_replace_node">rb_replace_node</a></td>
+      <td class="css_td_solid_normal">
+        用新的紅黑樹節點替換某個紅黑樹上的紅黑樹節點.<br>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+</div>
+<br>
+
+<div class="css_div_form_title_large">說明</div>
+<div class="css_div_form_body_large">
+  <br>
+
+  需要的標頭檔 :<br>
+  <div class="css_div_attent">
+    <font class="css_font_b1">#include &lt;linux/rbtree.h&gt;</font><br>
+  </div>
+  <br><br>
+
+  紀錄紅黑樹樹根的結構 :<br>
+  <div class="css_div_attent">
+    <font class="css_font_g1">struct rb_root</font><br>
+  </div>
+  <br>
+  紀錄紅黑樹樹節點的結構, 須要在自定的資料結構中宣告一個 :<br>
+  <div class="css_div_attent">
+    <font class="css_font_g1">struct rb_node</font><br>
+  </div>
+  <br><br>
+
+  在自定的資料結構中宣告一個紅黑樹節點 :<br>
+<pre class="css_pre_code">
+// 範例, 定義一個記錄每個產品的名稱和價格的結構.
+struct product_t
+{
+    // 紅黑樹節點.
+    struct rb_node tnode;
+    // 產品名稱.
+    char name[16];
+    // 產品價格.
+    unsigned int price;
+};
+</pre>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_RB_ROOT"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">RB_ROOT</font><br>
+    常數, 初始化紅黑樹樹根.<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    範例 :<br>
+<pre class="css_pre_code">
+// 宣告一個紅黑樹樹根並初始化.
+struct rb_root product_tree = RB_ROOT;
+</pre>
+  </div>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_RB_EMPTY_ROOT"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">RB_EMPTY_ROOT</font><br>
+    巨集, 檢查紅黑樹樹根是否為空.<br>
+    <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">回傳 <font class="css_font_r1">(int)</font></td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap"><font class="css_font_g1">0</font></td>
+        <td class="css_td_solid_normal">不是空的.</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap"><font class="css_font_g1">1</font></td>
+        <td class="css_td_solid_normal">是空的.</td>
+      </tr>
+    </table>
+    <br>
+    範例 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    int ret;
+
+    // 檢查.
+    ret = RB_EMPTY_ROOT(&product_tree);
+}
+</pre>
+  </div>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_RB_CLEAR_NODE"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">RB_CLEAR_NODE</font><br>
+    巨集, 清除紅黑樹節點中指向父節點的變數的值 (改為指向自己).<br>
+    <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹節點.<br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    範例 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct product_t *target_product;
+
+    // 01. 使用 kmalloc() 取得空間.
+    target_product = ...
+
+    // 設定.
+    RB_CLEAR_NODE(&(target_product->tnode));
+}
+</pre>
+
+  </div>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_RB_EMPTY_NODE"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">RB_EMPTY_NODE</font><br>
+    巨集, 檢查紅黑樹節點中指向父節點的變數是否為空 (是否是指向自己).<br>
+    <font class="css_font_r1">從 kernel 2.6.18 開始之後才有</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹節點.<br>
+        </td>
+      </tr>
+    </table>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">回傳 <font class="css_font_r1">(int)</font></td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap"><font class="css_font_g1">0</font></td>
+        <td class="css_td_solid_normal">不是空的 (不是指向自己).</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap"><font class="css_font_g1">1</font></td>
+        <td class="css_td_solid_normal">是空的 (是指向自己).</td>
+      </tr>
+    </table>
+    <br>
+    範例 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct product_t *target_product;
+    int ret;
+
+    // 01. 目標節點.
+    target_product = ...
+
+    // 檢查.
+    ret = RB_EMPTY_NODE(&(target_product->tnode));
+}
+</pre>
+
+  </div>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rb_entry"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_entry</font><br>
+    巨集, 透過結構成員的位址獲得結構主體的位址.<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">ptr</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          結構成員的位址.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_g1">type</font>
+        </td>
+        <td class="css_td_solid_normal">
+          結構的類型.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_g1">member</font>
+        </td>
+        <td class="css_td_solid_normal">
+          結構成員的名稱.<br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    範例 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct rb_node *target_tnode;
+    struct product_t *target_product;
+
+    // 01. 指向某個紅黑樹節點.
+    target_tnode = ...
+
+    // 取得結構主體位址.
+    target_product = hlist_entry(target_tnode, struct product_t, tnode);
+}
+</pre>
+  </div>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rb_parent"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_parent</font><br>
+    巨集, 取得某個紅黑樹節點的父節點的位址.<br>
+    <font class="css_font_r1">從 kernel 2.6.18 開始之後才有.</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">r</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹節點.<br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    範例 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct rb_node *parent_tnode;
+    struct product_t *target_product;
+
+    // 01. 指向某個節點.
+    target_tnode = ...
+
+    // 取得.
+    parent_tnode = rb_parent(&(target_product->tnode));
+}
+</pre>
+  </div>
+  <br><br>
+
+  撰寫紅黑樹的搜尋函式 :<br>
+<pre class="css_pre_code">
+// 搜尋函式.
+int rbtree_search_product_by_name(
+    char *product_name,
+    struct product_t **product_data_buf)
+{
+    struct rb_node *each_tnode;
+    struct product_t *each_product;
+    int ret;
+
+
+    // 從樹根開始尋找.
+    each_tnode = product_tree.rb_node;
+    while(each_tnode != NULL)
+    {
+        each_product = rb_entry(each_tnode, struct product_t, tnode);
+
+        ret = strcmp(product_name, each_product->name);
+        if(ret < 0)
+        {
+            each_tnode = each_tnode->rb_left;
+        }
+        else
+        if(ret > 0)
+        {
+            each_tnode = each_tnode->rb_right;
+        }
+        else
+        {
+            *product_data_buf = each_product;
+            return 0;
+        }
+    }
+
+    return -1;
+}
+</pre>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rb_link_node"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_link_node</font><br>
+    連結要加入紅黑樹的紅黑樹節點.<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要加入的紅黑樹節點.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">parent</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要加入在哪個紅黑樹父節點之下.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node **</font><br>
+          <font class="css_font_g1">rb_link</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要加入在紅黑樹父節點的何處 (紅黑樹父節點的左邊或右邊的指標位址).<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  <div class="css_div_hook" id="hook_rb_insert_color"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_insert_color</font><br>
+    連結要加入紅黑樹的紅黑樹節點著色以及調整紅黑樹的平衡.<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要加入的紅黑樹節點.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要調整平衡的紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  撰寫加入資料到紅黑樹的函式 :<br>
+<pre class="css_pre_code">
+int rbtree_add(
+    struct product_t *product_data)
+{
+    struct rb_node **each_tnode, *parent_tnode = NULL;
+    struct product_t *each_product;
+    int ret;
+
+
+    // 需要修改樹節點的內容, 需要使用雙重指標.
+    each_tnode = &(product_tree.rb_node);
+    // 等於 NULL 表示找到插入的位置.
+    while(*each_tnode != NULL)
+    {
+        parent_tnode = *each_tnode;
+
+        each_product = rb_entry(*each_tnode, struct product_t, tnode);
+
+        ret = strcmp(product_data->name, each_product->name);
+        if(ret < 0)
+        {
+            // 取得指向左節點的指標的位置.
+            each_tnode = &((*each_tnode)->rb_left);
+        }
+        else
+        if(ret > 0)
+        {
+            // 取得指向右節點的指標的位置.
+            each_tnode = &((*each_tnode)->rb_right);
+        }
+        else
+        {
+            DMSG("product already exist [%s/%u]", each_product->name, each_product->price);
+            return -1;
+        }
+    }
+
+    // 取得空間.
+    each_product = (struct product_t *) kmalloc(sizeof(struct product_t), GFP_KERNEL);
+    if(each_product == NULL)
+    {
+        DMSG("call kmalloc() fail");
+        return -1;
+    }
+
+    // 複製資料.
+    memcpy(each_product, product_data, sizeof(struct product_t));
+
+    // 加入.
+    rb_link_node(&(each_product->tnode), parent_tnode, each_tnode);
+    rb_insert_color(&(each_product->tnode), &product_tree);
+    DMSG("add [%s/%u]", each_product->name, each_product->price);
+
+    return 0;
+}
+</pre>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rb_erase"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_erase</font><br>
+    刪除紅黑樹的紅黑樹節點並調整紅黑樹的平衡.<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要刪除的紅黑樹節點.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要調整平衡的紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  撰寫從紅黑樹刪除資料的函式 :<br>
+<pre class="css_pre_code">
+int rbtree_del(
+    char *product_name)
+{
+    struct product_t *each_product;
+
+
+    // 檢查資料是否存在.
+    if(rbtree_search_product_by_name(product_name, &each_product) < 0)
+    {
+        DMSG("not find product [%s]", product_name);
+        return -1;
+    }
+
+    // 刪除.
+    DMSG("del [%s/%u]", each_product->name, each_product->price);
+    rb_erase(&(each_product->tnode), &product_tree);
+    kfree(each_product);
+
+    return 0;
+}
+</pre>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rb_first"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_first</font><br>
+    指向紅黑樹最左邊的紅黑樹節點.<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  <div class="css_div_hook" id="hook_rb_last"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_last</font><br>
+    指向紅黑樹最右邊的紅黑樹節點.<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  <div class="css_div_hook" id="hook_rb_next"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_next</font><br>
+    指向某個紅黑樹節點的後一個紅黑樹節點 (以中序方式走訪).<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹節點.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  <div class="css_div_hook" id="hook_rb_prev"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_prev</font><br>
+    指向某個紅黑樹節點的前一個紅黑樹節點 (以中序方式走訪).<br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹節點.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  範例, 以中序方式走訪紅黑樹的所有紅黑樹節點 (左到右), 不可在走訪期間刪除節點 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct rb_node *each_tnode;
+    struct product_t *each_product;
+
+    for(each_tnode = rb_first(&product_tree);
+        each_tnode != NULL;
+        each_tnode = rb_next(each_tnode))
+    {
+        // each_tnode 會指向目前的紅黑樹節點.
+        each_product = rb_entry(each_tnode, struct product_t, tnode);
+        ...
+    }
+}
+</pre>
+  <br>
+
+  範例, 以中序方式走訪紅黑樹的所有紅黑樹節點 (右到左), 不可在走訪期間刪除節點 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct rb_node *each_tnode;
+    struct product_t *each_product;
+
+    for(each_tnode = rb_last(&product_tree);
+        each_tnode != NULL;
+        each_tnode = rb_prev(each_tnode))
+    {
+        // each_tnode 會指向目前的紅黑樹節點.
+        each_product = rb_entry(each_tnode, struct product_t, tnode);
+        ...
+    }
+}
+</pre>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rb_first_postorder"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_first_postorder</font><br>
+    指向紅黑樹最左邊的紅黑樹節點.<br>
+    <font class="css_font_r1">從 kernel 3.12 開始之後才有.</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  <div class="css_div_hook" id="hook_rb_next_postorder"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_next_postorder</font><br>
+    指向某個紅黑樹節點的後一個紅黑樹節點 (以後序方式走訪).<br>
+    <font class="css_font_r1">從 kernel 3.12 開始之後才有.</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">node</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          目標紅黑樹節點.<br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+
+  範例, 以後序方式走訪紅黑樹的所有紅黑樹節點 (左到右), 不可在走訪期間刪除節點 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct rb_node *each_tnode;
+    struct product_t *each_product;
+
+    for(each_tnode = rb_first_postorder(&product_tree);
+        each_tnode != NULL;
+        each_tnode = rb_next_postorder(each_tnode))
+    {
+        // each_tnode 會指向目前的紅黑樹節點.
+        each_product = rb_entry(each_tnode, struct product_t, tnode);
+        ...
+    }
+}
+</pre>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rbtree_postorder_for_each_entry_safe"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rbtree_postorder_for_each_entry_safe</font><br>
+    巨集, 以後序方式走訪紅黑樹上的所有紅黑樹節點 (左到右), 可以在走訪期間刪除節點.<br>
+    <font class="css_font_r1">從 kernel 3.12 開始之後才有.</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct ??? *</font><br>
+          <font class="css_font_g1">pos</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          紀錄指向目前紅黑樹節點的變數.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct ??? *</font><br>
+          <font class="css_font_g1">n</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          暫存用的紅黑樹節點變數.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要走訪的紅黑樹樹根.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_g1">member</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          節點的結構內紀錄紅黑樹節點資料的變數名稱.<br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    範例, 刪除整棵紅黑樹 :<br>
+<pre class="css_pre_code">
+void rbtree_clear_method2(
+    void)
+{
+    struct product_t *each_product, *tmp_product;
+
+    // 走訪.
+    rbtree_postorder_for_each_entry_safe(each_product, tmp_product, &product_tree, tnode)
+    {
+        // 刪除.
+        DMSG("del [%s/%u]", each_product->name, each_product->price);
+        rb_erase(&(each_product->tnode), &product_tree);
+        kfree(each_product);
+    }
+}
+</pre>
+    <br><br>
+    範例, 不使用 rbtree_postorder_for_each_entry_safe() 刪除整棵紅黑樹,<br>
+    使用後序走訪紅黑樹並直接釋放節點 :<br>
+<pre class="css_pre_code">
+void rbtree_clear_method1(
+    struct rb_node *this_tnode)
+{
+    struct product_t *each_product;
+
+    if(this_tnode->rb_left != NULL)
+        rbtree_clear_method1(this_tnode->rb_left);
+    if(this_tnode->rb_right != NULL)
+        rbtree_clear_method1(this_tnode->rb_right);
+
+    each_product = rb_entry(this_tnode, struct product_t, tnode);
+    DMSG("del [%s/%u]", each_product->name, each_product->price);
+    kfree(each_product);
+}
+void rbtree_clear(
+    void)
+{
+    if(product_tree.rb_node != NULL)
+    {
+        rbtree_clear_method1(product_tree.rb_node);
+        product_tree = RB_ROOT;
+    }
+}
+</pre>
+  </div>
+  <br><br>
+
+  <div class="css_div_hook" id="hook_rb_replace_node"></div>
+  <div class="css_div_group">
+    <font class="css_font_b2">rb_replace_node</font><br>
+    用新的紅黑樹節點替換某個紅黑樹上的紅黑樹節點.<br>
+    <font class="css_font_r1">注意新的紅黑樹節的鍵值 (在此範例中是指 name) 必須和被替換的紅黑樹節相同.</font><br>
+    <br>
+    <table class="css_table_solid">
+      <tr>
+        <td class="css_td_solid_center" colspan="2">參數</td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">victim</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          要被替換的紅黑樹節點.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_node *</font><br>
+          <font class="css_font_g1">new</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          新的紅黑樹節點.<br>
+        </td>
+      </tr>
+      <tr>
+        <td class="css_td_solid_nowrap">
+          <font class="css_font_r1">struct rb_root *</font><br>
+          <font class="css_font_g1">root</font><br>
+        </td>
+        <td class="css_td_solid_normal">
+          紅黑樹樹根.<br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    範例 :<br>
+<pre class="css_pre_code">
+void ...(
+    void)
+{
+    struct product_t *target_product, *new_parent;
+
+    // 01. 找到要被替換的節點.
+    target_product = ...
+
+    // 01. 使用 kmalloc() 取得空間.
+    // 02. 填入產品資料.
+    // 03. 確認鍵值 (產品名稱) 和要被替換的節點的一樣.
+    new_parent = ...
+
+    rb_replace_node(&(target_product->tnode), &(new_parent->tnode), &product_tree);
+}
+</pre>
+  </div>
+  <br><br>
+
+</div>
+<br>
+
+</body>
+
+</html>
